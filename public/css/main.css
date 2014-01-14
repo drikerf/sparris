@@ -1,0 +1,57 @@
+body {
+    font-family: 'Poiret One', cursive;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 56px;
+    font-family: 'Poiret One', cursive;
+}
+
+h1 a,
+h1 a:hover,
+h1 a:active {
+    color: #333333;
+    text-decoration: none;
+}
+
+h2 {
+    font-size: 36px;
+    font-family: 'Poiret One', cursive;
+}
+
+p {
+    font-size: 28px;
+}
+
+.content {
+    max-width: 330px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.modal {
+    display: none;
+    position: absolute;
+    margin: 10px 0 0 10px;
+    background: url('/img/ajax-loader.gif')
+                no-repeat;
+}
+
+.poweredBy {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.unstyledList {
+    font-size: 14px;
+    list-style: none;
+    padding: 0px;
+}
+
+.unstyledList ul li {
+    padding: 0;
+    margin: 0;
+}
