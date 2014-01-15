@@ -44,6 +44,9 @@ $(function () {
 
         // Show next sight
         writeDOM(places[counter]);
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
     });
 });
 
