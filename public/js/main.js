@@ -39,7 +39,7 @@ $(function () {
             return;
         }
 
-        // Increment nopeCounter
+        // Increment counter
         counter++;
 
         // Show next sight
@@ -86,9 +86,6 @@ function updatePlace (data) {
     places = data;
     // Write DOM
     writeDOM(data[0]);
-    // TODO: Add html with place details.
-    // Okey links to specifics, map button and share button.
-    // Nope Gets next place in data
 }
 
 // Shuffle places

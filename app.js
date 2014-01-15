@@ -13,7 +13,7 @@ app.set('views', __dirname + '/views');
 app.use(express.static(__dirname + '/public'));
 
 // Enable logger
-app.use(express.logger('dev'));
+// app.use(express.logger('dev'));
 
 app.get('/', function (req, res) {
     res.render('index');
@@ -37,6 +37,7 @@ app.get('/about', function (req, res) {
 
 // Port
 var port = process.env.PORT || 5000;
+
 // Listen
 app.listen(port, function () {
     console.log('Listening on ' + port);
