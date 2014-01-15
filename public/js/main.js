@@ -51,7 +51,7 @@ $(function () {
 });
 
 // Geolocate user
-function getLocation () {
+function getLocation() {
     // Show loader
     $('.modal').show();
     // Get geolocation
@@ -68,7 +68,7 @@ function getLocation () {
 }
 
 // Get places from api
-function getPlaces (coords) {
+function getPlaces(coords) {
     // Make ajax request
     $.ajax({
         url: '/api/places',
@@ -79,7 +79,7 @@ function getPlaces (coords) {
 }
 
 // Get place callback
-function updatePlace (data) {
+function updatePlace(data) {
     // Hide loader
     $('.modal').hide();
     // Shuffle places
@@ -92,7 +92,7 @@ function updatePlace (data) {
 }
 
 // Shuffle places
-function shufflePlaces (places) {
+function shufflePlaces(places) {
     var counter = places.length, temp, index;
 
     // While elements in array
@@ -108,7 +108,7 @@ function shufflePlaces (places) {
 }
 
 // Write place to dom
-function writeDOM (place) {
+function writeDOM(place) {
     // construct html
     var placeOutput = '<img class="img-circle imgCenter" src="' + place.photo + '" />' +
         '<h2><a href="' + place.url + '" target="_blank">' + place.name + '</a></h2>';
