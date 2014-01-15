@@ -22,7 +22,7 @@ app.get('/', function (req, res) {
 app.get('/api/places', function (req, res) {
     // Get lat, lon
     var coords = {'lat': req.query.lat, 'lon': req.query.lon}
-    // TODO: Get places from foursquare.api.getPlaces by coords
+    // Get places
     foursquare.getPlaces(coords, function (places, error) {
         if (error) {
             res.end();

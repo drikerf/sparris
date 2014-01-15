@@ -2,8 +2,11 @@
 var https = require('https');
 
 // API Keys
-var api_keys = require('./api_keys.js');
-
+try {
+    var api_keys = require('./api_keys.js');
+} catch (error) {
+    // Nothing..
+}
 exports.getPlaces = function (coords, callback) {
     // Placeholder
     var places = null;
@@ -43,9 +46,11 @@ exports.getPlaces = function (coords, callback) {
         //'4e74f6cabd41c4836eac4c31'
         ;
     var img_size = '300x300'
+    var client_id = process.env.CLIENT_ID || api_keys.fs.CLIENT_ID;
+    var client_secret = process.env.CLIENT_SECRET || api_keys.fs.CLIENT_SECRET;
     var url = 'https://api.foursquare.com/v2/venues/explore' +
-        '?client_id=' + api_keys.fs.CLIENT_ID + 
-        '&client_secret=' + api_keys.fs.CLIENT_SECRET + 
+        '?client_id=' + client_id + 
+        '&client_secret=' + client_secret + 
         '&v=' + version + 
         '&ll=' + coords.lat + ',' + coords.lon + 
         '&categoryId=' + category + 
