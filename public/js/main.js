@@ -107,7 +107,7 @@ function shufflePlaces (places) {
 // Write place to dom
 function writeDOM (place) {
     // construct html
-    var placeOutput = '<img class="img-circle" src="' + place.photo + '" />' +
+    var placeOutput = '<img class="img-circle imgCenter" src="' + place.photo + '" />' +
         '<h2><a href="' + place.url + '" target="_blank">' + place.name + '</a></h2>';
     if (place.tip) {
         placeOutput += '<p>"' + place.tip +'"</p>';
