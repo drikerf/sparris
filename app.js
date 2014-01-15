@@ -1,5 +1,7 @@
+// require
 var express = require('express');
 var foursquare = require('./foursquare.js');
+
 // init app
 var app = express();
 
