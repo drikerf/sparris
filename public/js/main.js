@@ -74,7 +74,7 @@ function getPlaces(coords) {
         url: '/api/places',
         data: coords,
         success: updatePlace,
-        dataType: 'json'
+        contentType: 'json; charset=utf-8'
     });
 }
 
@@ -82,6 +82,11 @@ function getPlaces(coords) {
 function updatePlace(data) {
     // Hide loader
     $('.modal').hide();
+    // If nothing, write error
+    if (data == null) {
+        showError();
+        return;
+    }
     // Shuffle places
     data = shufflePlaces(data);
 
@@ -89,6 +94,10 @@ function updatePlace(data) {
     places = data;
     // Write DOM
     writeDOM(data[0]);
+}
+
+function showError() {
+    $('.placeInfo').html('<h2>Nothing found :(</h2>');
 }
 
 // Shuffle places
@@ -112,9 +121,7 @@ function writeDOM(place) {
     // construct html
     var placeOutput = '<img class="img-circle imgCenter" src="' + place.photo + '" />' +
         '<h2><a href="' + place.url + '" target="_blank">' + place.name + '</a></h2>';
-    if (place.tip) {
-        placeOutput += '<p>"' + place.tip +'"</p>';
-    }
+        placeOutput += '<p>"' + place.description +'"</p>';
     $('.placeInfo').html(placeOutput);
 }
 
