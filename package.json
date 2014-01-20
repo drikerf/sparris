@@ -1,16 +1,26 @@
 {
   "name": "sparris",
-  "version": "0.0.1",
+  "version": "0.0.1-3",
   "description": "Explore",
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "author": "",
   "license": "BSD-2-Clause",
   "dependencies": {
     "express": "~3.4.7",
     "jade": "~1.1.4"
+  },
+  "subdomain": "sparris",
+  "domains": [
+    "wobaka.com",
+    "sparris.wobaka.com",
+    "*.wobaka.com"
+  ],
+  "engines": {
+    "node": "0.10.x"
   }
 }
