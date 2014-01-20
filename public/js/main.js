@@ -53,7 +53,7 @@ $(function () {
 // Geolocate user
 function getLocation() {
     // Show loader
-    $('.modal').show();
+    $('.placeInfo').html('<h2>Finding places near your location...</h2>');
     // Get geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
@@ -80,8 +80,6 @@ function getPlaces(coords) {
 
 // Get place callback
 function updatePlace(data) {
-    // Hide loader
-    $('.modal').hide();
     // If nothing, write error
     if (data == null) {
         showError();
@@ -89,9 +87,10 @@ function updatePlace(data) {
     }
     // Shuffle places
     data = shufflePlaces(data);
-
     // Set global places
     places = data;
+    // Set nope counter to 0
+    counter = 0;
     // Write DOM
     writeDOM(data[0]);
 }

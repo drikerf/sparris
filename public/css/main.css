@@ -30,14 +30,6 @@ p {
     text-align: center;
 }
 
-.modal {
-    display: none;
-    position: absolute;
-    margin: 10px 0 0 10px;
-    background: url('/img/ajax-loader.gif')
-                no-repeat;
-}
-
 .poweredBy {
     display: block;
     margin-left: auto;
