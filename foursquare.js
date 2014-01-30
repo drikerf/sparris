@@ -65,7 +65,8 @@ exports.getPlaces = function (coords, callback) {
                 // Loop
                 items.forEach(function (item) {
                     var detailUrl = 'https://api.foursquare.com/v2/venues/' + item.venue.id +
-                    '/' + '?client_id=' + client_id + '&client_secret=' + client_secret;
+                    '/' + '?client_id=' + client_id + '&client_secret=' + client_secret + 
+                    '&v=' + version;
                     https.get(detailUrl, function (res) {
                         var body = '';
                         res.on('data', function (chunk) {
@@ -85,9 +86,9 @@ exports.getPlaces = function (coords, callback) {
                                 place.coords.lon = response.location.lng;
                                 place.url = 'http://foursquare.com/v/' + place.id;
                                 place.description = response.description;
-                                // Get photos where type=venue, group [1]
-                                place.photo = response.photos.groups[1].items[1].url.
-                                    replace('original', img_size);
+                                // Get photos where type=venue, group [0]
+                                place.photo = response.photos.groups[0].items[0].prefix + 
+                                    img_size + response.photos.groups[0].items[0].suffix;
                                 places.push(place);
                             }
                             placeCounter++;
